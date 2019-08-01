@@ -13,9 +13,6 @@
   <profiles>
     <profile>
       <id>travis</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
 	  <repositories>
 		  <repository>
 			<id>kostat-ex-tree</id>
@@ -40,4 +37,7 @@
 	  </repositories>
 	</profile>
   </profiles>
+  <activeProfiles>
+   <activeProfile>travis</activeProfile>
+ </activeProfiles>
 </settings>
