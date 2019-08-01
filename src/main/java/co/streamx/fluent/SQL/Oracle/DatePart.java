@@ -1,0 +1,6 @@
+package co.streamx.fluent.SQL.Oracle;
+
+public enum DatePart {
+    YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, TIMEZONE_HOUR, TIMEZONE_MINUTE, TIMEZONE_ABBR, TIMEZONE_REGION,
+    TIMEZONE_OFFSET
+}
