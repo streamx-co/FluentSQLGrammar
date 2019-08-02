@@ -514,7 +514,7 @@ public interface SQL {
     }
 
     /**
-     * Used in {@link SQL#MERGE()} only<br/>
+     * Used in {@link SQL#MERGE()} only<br>
      * Name changed to avoid clashing
      */
     @Function(name = "UPDATE", omitParentheses = true)
@@ -523,7 +523,7 @@ public interface SQL {
     }
 
     /**
-     * Used in {@link SQL#MERGE()} only<br/>
+     * Used in {@link SQL#MERGE()} only<br>
      * Name changed to avoid clashing
      */
     @Function(name = "INSERT", omitParenthesesIfArgumentess = true)
@@ -532,8 +532,8 @@ public interface SQL {
     }
 
     /**
-     * Usage example:<br/>
-     * <br/>
+     * Usage example:<br>
+     * <br>
      * {@code registerVendorCapabilities(FluentJPA::setCapabilities);}
      */
     @Local

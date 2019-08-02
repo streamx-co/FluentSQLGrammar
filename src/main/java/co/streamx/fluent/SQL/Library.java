@@ -11,7 +11,7 @@ import java.util.Collection;
 public interface Library {
 
     /**
-     * Translates to {@link ScalarFunctions#COALESCE(Object...)}. Use vendor specific variant if preferred.
+     * Translates to {@link ScalarFunctions#COALESCE(Comparable...)}. Use vendor specific variant if preferred.
      */
     static <T extends Comparable<? super T>> T ISNULL(T expression1,
                                                       T expression2) {
@@ -26,7 +26,7 @@ public interface Library {
     }
 
     /**
-     * Translates to {@code COUNT(Keywords.ASTERISK)},<br/>
+     * Translates to {@code COUNT(Keywords.ASTERISK)},<br>
      * which translates to {@code COUNT(*)}
      */
     static int COUNT() {
@@ -40,12 +40,12 @@ public interface Library {
     /**
      * Performs a sub-query {@code SELECT <field> FROM <tableRef>}. Since the result is a table with a single column,
      * it's acceptable by operators such as {@link Operators#IN(Comparable, Collection) IN} and can be represented as
-     * Java {@link Collection}.<br/>
-     * <br/>
+     * Java {@link Collection}.<br>
+     * <br>
      * 
      * Out of the box FluentJPA maps {@link Collection#isEmpty()}, {@link Collection#size()} and
      * {@link Collection#contains(Object)} to the corresponding SQL functions ({@link Operators#EXISTS(Object) !EXISTS},
-     * {@link AggregateFunctions#COUNT(Object) COUNT} and {@link Operators#IN(Comparable, Collection) IN}).
+     * {@link AggregateFunctions#COUNT(Comparable) COUNT} and {@link Operators#IN(Comparable, Collection) IN}).
      * 
      * @return {@code Collection<C>}
      */
@@ -195,7 +195,7 @@ public interface Library {
     }
 
     /**
-     * A shortcut for<br/>
+     * A shortcut for<br>
      * 
      * <pre>
      * {@code SELECT(<tableRef>);
@@ -210,7 +210,7 @@ public interface Library {
     }
 
     /**
-     * A shortcut for<br/>
+     * A shortcut for<br>
      * 
      * <pre>
      * {@code SELECT(<tableRef>.field1, <tableRef>.field2, ...);

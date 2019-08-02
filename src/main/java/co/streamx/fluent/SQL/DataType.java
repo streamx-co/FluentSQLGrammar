@@ -15,9 +15,9 @@ import co.streamx.fluent.notation.Local;
 public interface DataType<T extends Comparable<? super T>> {
 
     /**
-     * Creates a literal (string) constant of "this" type. E.g. {@code DATE '2001-10-08'}<br/>
-     * <i>Note</i>, that some vendors (e.g. SQL Server) don't support this syntax. In this case use {@link #cast(Object)
-     * cast} instead.
+     * Creates a literal (string) constant of "this" type. E.g. {@code DATE '2001-10-08'}<br>
+     * <i>Note</i>, that some vendors (e.g. SQL Server) don't support this syntax. In this case use
+     * {@link #cast(Comparable) cast} instead.
      * 
      * @param constant (Not field!). Must be formatted according to vendor specification for the current type. E.g.
      *                 {@code "2001-10-08"} for DATE
@@ -37,7 +37,7 @@ public interface DataType<T extends Comparable<? super T>> {
     }
 
     /**
-     * Casts the {@code expression}. See {@link ScalarFunctions#CAST(Object, DataType) CAST}.
+     * Casts the {@code expression}. See {@link ScalarFunctions#CAST(Comparable, DataType) CAST}.
      */
     default <E extends Comparable<E>> T cast(E expression) {
         return CAST(expression, this);
@@ -75,9 +75,9 @@ public interface DataType<T extends Comparable<? super T>> {
      * argument.
      * 
      * <pre>
-     * {@code
+     * <code>
      * // produces DATE[] type
-     * DATE.derive("{0}[]");
+     * DATE.derive("{0}[]");</code>
      * </pre>
      * 
      */
@@ -88,7 +88,7 @@ public interface DataType<T extends Comparable<? super T>> {
     }
 
     /**
-     * Create a new SQL Type <-> Java type mapping
+     * Create a new SQL Type &lt;-&gt; Java type mapping
      * 
      * @param <T>      The Java type.
      * @param typeName The SQL type name.

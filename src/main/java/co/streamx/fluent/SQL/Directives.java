@@ -143,8 +143,8 @@ public interface Directives {
 
     /**
      * Prevents default aliasing. Useful in rare vendor specific cases. E.g. see
-     * {@link <a href="https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/INSERT.html">Oracle INSERT
-     * (Restriction on Table Aliases)</a>}
+     * <a href="https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/INSERT.html">Oracle INSERT
+     * (Restriction on Table Aliases)</a>
      */
     @Alias(false)
     static void noAlias(Object... entities) {

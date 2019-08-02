@@ -330,8 +330,8 @@ public interface SQL {
     }
 
     /**
-     * Usage example:<br/>
-     * <br/>
+     * Usage example:<br>
+     * <br>
      * {@code registerVendorCapabilities(FluentJPA::setCapabilities);}
      */
     @Local

@@ -92,9 +92,9 @@ public enum Format implements FormatModel {
     /**
      * Creates generic {@link FormatModel}
      * 
-     * @param formatModel See {@link <a href=
+     * @param formatModel See <a href=
      *                    "https://docs.oracle.com/cd/B28359_01/server.111/b28286/sql_elements004.htm#SQLRF00210">Format
-     *                    Models</a>}
+     *                    Models</a>
      */
     @Local
     public static FormatModel model(String formatModel) {
