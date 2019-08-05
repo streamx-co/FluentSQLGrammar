@@ -136,7 +136,7 @@ public interface SQL {
 
     @SafeVarargs
     @Function(omitParentheses = true, requiresAlias = true)
-    static <T extends Record<T>, R extends T> R VALUES(T... expressions) {
+    static <T extends Record<T>, R extends T> R VALUES(T... rows) {
         throw new UnsupportedOperationException();
     }
 

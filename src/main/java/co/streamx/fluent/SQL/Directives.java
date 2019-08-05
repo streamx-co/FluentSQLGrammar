@@ -32,6 +32,9 @@ public interface Directives {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Specifies a table to recurse in recursive CTE
+     */
     @CommonTableExpression(self = true)
     static <T> T recurseOn(T commonTableExpression) {
         throw new UnsupportedOperationException();
@@ -102,39 +105,52 @@ public interface Directives {
         throw new UnsupportedOperationException();
     }
 
-    @Function(name = "", omitParentheses = true)
-    static <T extends Comparable<? super T>> WindowOver<T> windowOf(T aggregateFunction) {
-        throw new UnsupportedOperationException();
-    }
-
+    /**
+     * lets specify a window frame in OVER clause
+     */
     @Function(name = "", omitParentheses = true)
     static WindowFrame windowFrame() {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Starts Window Function (OVER clause)
+     */
     @Function(name = "", omitParentheses = true)
     static <T extends Comparable<? super T>> AggregateGroup<T> aggregateBy(T aggregateFunction) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Creates an alias
+     */
     @Alias
     static <T extends Comparable<? super T>> T alias(Value<T> field,
                                                      String alias) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Creates an alias
+     */
     @Alias
     static <T extends Comparable<? super T>, T1> T alias(Value<T> field,
                                                          @Context(ParameterContext.ALIAS) Function1<T1, T> alias) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Creates an alias
+     */
     @Alias
     static <T, T1> T alias(T field,
                            @Context(ParameterContext.ALIAS) Function1<T1, T> alias) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Creates an alias
+     */
     @Alias
     static <T> T alias(T fieldOrEntity,
                        String alias) {
@@ -142,7 +158,7 @@ public interface Directives {
     }
 
     /**
-     * Prevents default aliasing. Useful in rare vendor specific cases. E.g. see
+     * Prevents default table aliasing. Useful in rare vendor specific cases. E.g. see
      * <a href="https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/INSERT.html">Oracle INSERT
      * (Restriction on Table Aliases)</a>
      */
