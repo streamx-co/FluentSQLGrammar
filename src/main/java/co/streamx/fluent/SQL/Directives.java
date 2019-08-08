@@ -18,6 +18,7 @@ import co.streamx.fluent.notation.CommonTableExpression;
 import co.streamx.fluent.notation.Context;
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.Operator;
+import co.streamx.fluent.notation.Parameter;
 import co.streamx.fluent.notation.ParameterContext;
 import co.streamx.fluent.notation.SubQuery;
 
@@ -164,6 +165,11 @@ public interface Directives {
      */
     @Alias(false)
     static void noAlias(Object... entities) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Parameter
+    static <T> T parameter(T value) {
         throw new UnsupportedOperationException();
     }
 
