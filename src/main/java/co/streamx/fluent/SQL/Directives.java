@@ -168,6 +168,9 @@ public interface Directives {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Register an argument as a query parameter
+     */
     @Parameter
     static <T> T parameter(T value) {
         throw new UnsupportedOperationException();
