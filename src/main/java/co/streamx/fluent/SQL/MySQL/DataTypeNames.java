@@ -36,6 +36,8 @@ public enum DataTypeNames implements DataTypeName {
     // Date and time
     DATE, DATETIME, TIMESTAMP, TIME, YEAR,
 
+    INTERVAL, // see DATE_ADD
+
     // BLOBs
     TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB,
 

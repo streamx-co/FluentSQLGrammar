@@ -1,5 +1,8 @@
 package co.streamx.fluent.SQL.MySQL;
 
+import java.sql.Timestamp;
+import java.time.temporal.Temporal;
+import java.util.Date;
 import java.util.EnumSet;
 import java.util.ServiceLoader;
 import java.util.Set;
@@ -108,6 +111,78 @@ public interface SQL {
 
     @Function(omitParentheses = true)
     static void LIMIT(long rowCount) {
+        throw new UnsupportedOperationException();
+    }
+
+    // informational
+    @Function(underscoresAsBlanks = false)
+    static <T extends Number> T LAST_INSERT_ID(T next) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static long LAST_INSERT_ID() {
+        throw new UnsupportedOperationException();
+    }
+
+    // Date and Time
+    @Function
+    static <T extends Comparable<? super T>> T ADDDATE(T date,
+                                                       Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Comparable<? super T>> T ADDDATE(T date,
+                                                       int days) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Comparable<? super T>> T ADDTIME(T date,
+                                                       Comparable<?> time) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DATEDIFF(Date from,
+                        Date to) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DATEDIFF(Temporal from,
+                        Temporal to) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DATEDIFF(String from,
+                        String to) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Comparable<? super T>> T DATE_ADD(T date,
+                                                        Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Comparable<? super T>> T DATE_SUB(T date,
+                                                        Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String DATEFORMAT(Date date,
+                             String format) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Date> T STR_TO_DATE(String date,
+                                          String format) {
         throw new UnsupportedOperationException();
     }
 

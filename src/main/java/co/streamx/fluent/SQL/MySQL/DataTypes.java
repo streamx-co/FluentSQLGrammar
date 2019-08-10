@@ -13,6 +13,7 @@ public interface DataTypes {
     final DataType<Date> DATETIME = DataTypeNames.DATETIME.create();
     final DataType<Timestamp> TIMESTAMP = DataTypeNames.TIMESTAMP.create();
     final DataType<Time> TIME = DataTypeNames.TIME.create();
+    final DataType<Timestamp> INTERVAL = DataTypeNames.INTERVAL.create();
 
     /**
      * 1 byte
