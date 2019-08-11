@@ -104,11 +104,10 @@ public interface ScalarFunctions {
     /**
      * See {@link #BOTH(String)}, {@link #LEADING(String)}, {@link #TRAILING(String)} <br>
      * <br>
-     * Example: {@code TRIM(TRAILING("xyz"), "barxxyz")}
+     * Example: {@code TRIM(TRAILING("xyz").FROM("barxxyz"))}
      */
-    @Function(argumentsDelimiter = " FROM")
-    static String TRIM(Trim trim,
-                       String expression) {
+    @Function
+    static String TRIM(Trim trim) {
         throw new UnsupportedOperationException();
     }
 
