@@ -4,7 +4,7 @@
 	<name>Java Fluent SQL Grammar</name>
 	<groupId>co.streamx.fluent</groupId>
 	<artifactId>sql-grammar</artifactId>
-	<version>1.0.7-SNAPSHOT</version>
+	<version>1.0.7</version>
 	<packaging>jar</packaging>
 	<url>https://github.com/streamx-co/FluentSQLGrammar</url>
 
@@ -38,7 +38,7 @@
         <connection>scm:git:git@github.com:streamx-co/FluentSQLGrammar.git</connection>
         <developerConnection>scm:git:git@github.com:streamx-co/FluentSQLGrammar.git</developerConnection>
         <url>scm:git:git@github.com:streamx-co/FluentSQLGrammar.git</url>
-        <tag>HEAD</tag>
+        <tag>sql-grammar-1.0.7</tag>
     </scm>
 
 	<dependencies>
