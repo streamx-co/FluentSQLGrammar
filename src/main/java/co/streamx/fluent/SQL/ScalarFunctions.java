@@ -62,7 +62,7 @@ public interface ScalarFunctions {
     }
 
     /**
-     * Use with {@link #TRIM(Trim, String)}
+     * Use with {@link #TRIM(Trim)}
      */
     @Function(omitParentheses = true)
     static Trim BOTH(String expression) {
@@ -70,7 +70,7 @@ public interface ScalarFunctions {
     }
 
     /**
-     * Use with {@link #TRIM(Trim, String)}
+     * Use with {@link #TRIM(Trim)}
      */
     @Function(omitParentheses = true)
     static Trim LEADING() {
@@ -78,7 +78,7 @@ public interface ScalarFunctions {
     }
 
     /**
-     * Use with {@link #TRIM(Trim, String)}
+     * Use with {@link #TRIM(Trim)}
      */
     @Function(omitParentheses = true)
     static Trim LEADING(String expression) {
@@ -86,7 +86,7 @@ public interface ScalarFunctions {
     }
 
     /**
-     * Use with {@link #TRIM(Trim, String)}
+     * Use with {@link #TRIM(Trim)}
      */
     @Function(omitParentheses = true)
     static Trim TRAILING() {
@@ -94,7 +94,7 @@ public interface ScalarFunctions {
     }
 
     /**
-     * Use with {@link #TRIM(Trim, String)}
+     * Use with {@link #TRIM(Trim)}
      */
     @Function(omitParentheses = true)
     static Trim TRAILING(String expression) {
