@@ -12,11 +12,23 @@ import co.streamx.fluent.JPA.spi.SQLConfigurator;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.Local;
+import co.streamx.fluent.notation.Operator;
 
 public interface SQL {
 
     @Function
-    static String CHAR(int charCode) {
+    static String BIN(Number number) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String CHAR(int... charCodes) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static int FIND_IN_SET(String expression,
+                           String list) {
         throw new UnsupportedOperationException();
     }
 
@@ -30,6 +42,17 @@ public interface SQL {
     static String FORMAT(String expression,
                          String format,
                          String culture) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String FROM_BASE64(String encoded) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int INSTR(String string,
+                     String substring) {
         throw new UnsupportedOperationException();
     }
 
@@ -52,8 +75,169 @@ public interface SQL {
     }
 
     @Function
+    static String LPAD(String expression,
+                       int length,
+                       String padWith) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String MAKE_SET(int bits,
+                           String... strings) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static MatchAgainst MATCH(CharSequence... charSequences) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String QUOTE(String expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
     static String REPEAT(String expression,
                          Number count) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    @Operator(omitParentheses = true)
+    static boolean REGEXP(String stringToMatch,
+                          String pattern) {
+        throw new UnsupportedOperationException();
+    };
+
+    @Function
+    @Operator(omitParentheses = true)
+    static boolean RLIKE(String stringToMatch,
+                         String pattern) {
+        throw new UnsupportedOperationException();
+    };
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_INSTR(String expression,
+                               String pattern) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_INSTR(String expression,
+                               String pattern,
+                               int position) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_INSTR(String expression,
+                               String pattern,
+                               int position,
+                               int occurence) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_INSTR(String expression,
+                               String pattern,
+                               int position,
+                               int occurence,
+                               int returnOption) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_INSTR(String expression,
+                               String pattern,
+                               int position,
+                               int occurence,
+                               int returnOption,
+                               String matchParam) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_LIKE(String expression,
+                              String pattern) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_LIKE(String expression,
+                              String pattern,
+                              String matchParam) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_REPLACE(String expression,
+                                 String pattern,
+                                 String replaceExpression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_REPLACE(String expression,
+                                 String pattern,
+                                 String replaceExpression,
+                                 int position) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_REPLACE(String expression,
+                                 String pattern,
+                                 String replaceExpression,
+                                 int position,
+                                 int occurence) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_REPLACE(String expression,
+                                 String pattern,
+                                 String replaceExpression,
+                                 int position,
+                                 int occurence,
+                                 String matchParam) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_SUBSTR(String expression,
+                                String pattern) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_SUBSTR(String expression,
+                                String pattern,
+                                int position) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_SUBSTR(String expression,
+                                String pattern,
+                                int position,
+                                int occurence) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_SUBSTR(String expression,
+                                String pattern,
+                                int position,
+                                int occurence,
+                                String matchParam) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String RPAD(String expression,
+                       int length,
+                       String padWith) {
         throw new UnsupportedOperationException();
     }
 
@@ -67,31 +251,28 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    interface MatchAgainst {
-
-        @Function
-        boolean AGAINST(CharSequence toSearch);
-
-        @Function
-        boolean AGAINST(CharSequence toSearch,
-                        SearchMode searchMode);
-    }
-
     @Function
-    static MatchAgainst MATCH(CharSequence... charSequences) {
+    static String SUBSTRING(String expression,
+                            int from,
+                            int count) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static String SUBSTR(String expression,
-                         int from,
-                         int count) {
+    static String SUBSTRING(String expression,
+                            int from) {
         throw new UnsupportedOperationException();
     }
 
-    @Function
-    static String SUBSTR(String expression,
-                         int from) {
+    @Function(underscoresAsBlanks = false)
+    static String SUBSTRING_INDEX(String expression,
+                                  String delimiter,
+                                  int count) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String TO_BASE64(String expression) {
         throw new UnsupportedOperationException();
     }
 

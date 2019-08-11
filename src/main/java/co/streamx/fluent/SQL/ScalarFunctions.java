@@ -61,8 +61,53 @@ public interface ScalarFunctions {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Use with {@link #TRIM(Trim, String)}
+     */
+    @Function(omitParentheses = true)
+    static Trim BOTH(String expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Use with {@link #TRIM(Trim, String)}
+     */
+    @Function(omitParentheses = true)
+    static Trim LEADING() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Use with {@link #TRIM(Trim, String)}
+     */
+    @Function(omitParentheses = true)
+    static Trim LEADING(String expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Use with {@link #TRIM(Trim, String)}
+     */
+    @Function(omitParentheses = true)
+    static Trim TRAILING() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Use with {@link #TRIM(Trim, String)}
+     */
+    @Function(omitParentheses = true)
+    static Trim TRAILING(String expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * See {@link #BOTH(String)}, {@link #LEADING(String)}, {@link #TRAILING(String)} <br>
+     * <br>
+     * Example: {@code TRIM(TRAILING("xyz"), "barxxyz")}
+     */
     @Function(argumentsDelimiter = " FROM")
-    static String TRIM(String charsToTrim,
+    static String TRIM(Trim trim,
                        String expression) {
         throw new UnsupportedOperationException();
     }
