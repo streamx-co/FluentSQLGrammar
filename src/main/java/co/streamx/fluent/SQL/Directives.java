@@ -144,8 +144,17 @@ public interface Directives {
      * Creates an alias
      */
     @Alias
-    static <T, T1> T alias(T field,
-                           @Context(ParameterContext.ALIAS) Function1<T1, T> alias) {
+    static <T, T1> co.streamx.fluent.SQL.Alias<T> alias(T field,
+                                                        @Context(ParameterContext.ALIAS) Function1<T1, T> alias) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Creates an alias
+     */
+    @Alias
+    static <T extends Comparable<? super T>, T1> T alias(T field,
+                                                         @Context(ParameterContext.ALIAS) Function1<T1, T> alias) {
         throw new UnsupportedOperationException();
     }
 

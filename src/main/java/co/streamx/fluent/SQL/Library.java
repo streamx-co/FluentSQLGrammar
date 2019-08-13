@@ -60,7 +60,7 @@ public interface Library {
 
     @SafeVarargs
     static <TABLE, R extends UnboundRecord> SafeCollection<R> collectRows(TABLE tableRef,
-                                                                          Object... fields) {
+                                                                          Comparable<?>... fields) {
 
         return subQuery(() -> {
             SELECT(fields);
@@ -148,7 +148,7 @@ public interface Library {
      */
     @SafeVarargs
     static <R extends UnboundRecord> R pickRow(Object tableRef,
-                                               Object... fields) {
+                                               Comparable<?>... fields) {
 
         return subQuery(() -> {
             SELECT(fields);
@@ -221,7 +221,7 @@ public interface Library {
      */
     @SafeVarargs
     static void selectMany(Object tableRef,
-                           Object... fields) {
+                           Comparable<?>... fields) {
         SELECT(fields);
         FROM(tableRef);
     }

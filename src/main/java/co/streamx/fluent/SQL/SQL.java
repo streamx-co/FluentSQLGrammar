@@ -11,7 +11,12 @@ import co.streamx.fluent.notation.ParameterContext;
 public interface SQL {
 
     @Function(omitParentheses = true, parameterContext = ParameterContext.SELECT)
-    static SelectClause SELECT(Object... expressions) {
+    static SelectClause SELECT(Object expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true, parameterContext = ParameterContext.SELECT)
+    static SelectClause SELECT(Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 
@@ -21,15 +26,24 @@ public interface SQL {
     }
 
     @Function(omitParentheses = true)
-    static <R extends Record<?>> R DISTINCT(Object... expressions) {
+    static <R extends Record<?>> R DISTINCT(Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 
-    // does not provide any useful functionality and creates a clash with logical ALL
-//    @Function(omitParentheses = true)
-//    static <T extends Comparable<?>> T ALL(Object... expressions) {
-//        throw new UnsupportedOperationException();
-//    }
+    @Function(omitParentheses = true)
+    static <R extends Record<?>> R DISTINCT(Object expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(name = "", omitParentheses = true)
+    static <R extends Record<?>> R ALL(Comparable<?>... expressions) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(name = "", omitParentheses = true)
+    static <R extends Record<?>> R ALL(Object expression) {
+        throw new UnsupportedOperationException();
+    }
 
     @Function
     static <R extends Record1<T1>, T1 extends Comparable<? super T1>> R ROW(T1 expression) {

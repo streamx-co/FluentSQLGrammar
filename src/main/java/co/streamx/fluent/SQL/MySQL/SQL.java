@@ -16,6 +16,8 @@ import co.streamx.fluent.notation.Operator;
 
 public interface SQL {
 
+    // String
+
     @Function
     static String BIN(Number number) {
         throw new UnsupportedOperationException();
@@ -364,6 +366,53 @@ public interface SQL {
     @Function(underscoresAsBlanks = false)
     static <T extends Date> T STR_TO_DATE(String date,
                                           String format) {
+        throw new UnsupportedOperationException();
+    }
+
+    // Aggregate
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Comparable<? super T>> T BIT_AND(T expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Comparable<? super T>> T BIT_OR(T expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Comparable<? super T>> T BIT_XOR(T expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Use {@link co.streamx.fluent.SQL.SQL#ALL(Comparable...) ALL} or
+     * {@link co.streamx.fluent.SQL.SQL#DISTINCT(Comparable...) DISTINCT} to pass multiple expressions
+     */
+    @Function(underscoresAsBlanks = false)
+    static String GROUP_CONCAT(Comparable<?> expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Use {@link co.streamx.fluent.SQL.SQL#ALL(Comparable...) ALL} or
+     * {@link co.streamx.fluent.SQL.SQL#DISTINCT(Comparable...) DISTINCT} to pass multiple expressions
+     */
+    @Function(underscoresAsBlanks = false, argumentsDelimiter = " SEPARATOR")
+    static String GROUP_CONCAT(Comparable<?> expr,
+                               String separator) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String JSON_ARRAYAGG(Comparable<?> expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String JSON_OBJECTAGG(Comparable<?> key,
+                                 Comparable<?> value) {
         throw new UnsupportedOperationException();
     }
 
