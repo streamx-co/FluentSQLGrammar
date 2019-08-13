@@ -10,7 +10,7 @@ public interface AggregateFunctions {
     }
 
     @Function
-    static int GROUPING(Object... expressions) {
+    static int GROUPING(Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 

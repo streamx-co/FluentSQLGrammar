@@ -124,7 +124,7 @@ public interface SQL {
 
     @AllowsAlias
     @Function(name = "", omitParentheses = true)
-    static By BY(Object expression) {
+    static By BY(Comparable<?> expression) {
         throw new UnsupportedOperationException();
     }
 
