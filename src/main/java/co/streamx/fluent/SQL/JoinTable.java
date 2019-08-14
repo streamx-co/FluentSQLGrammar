@@ -49,7 +49,7 @@ public interface JoinTable<JOINED, INVERSE_JOINED> {
      * 
      * @return {@code JOINED} entity
      */
-    @TableJoin(property = true)
+    @TableJoin.Property
     JOINED getJoined();
 
     /**
@@ -58,6 +58,6 @@ public interface JoinTable<JOINED, INVERSE_JOINED> {
      * 
      * @return {@code INVERSE_JOINED} entity
      */
-    @TableJoin(property = true, inverse = true)
+    @TableJoin.Property(inverse = true)
     INVERSE_JOINED getInverseJoined();
 }

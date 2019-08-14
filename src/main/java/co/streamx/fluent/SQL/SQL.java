@@ -1,9 +1,10 @@
 package co.streamx.fluent.SQL;
 
 import co.streamx.fluent.functions.Function1;
-import co.streamx.fluent.notation.AllowsAlias;
+import co.streamx.fluent.notation.Alias;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.CommonTableExpression;
+import co.streamx.fluent.notation.CommonTableExpressionType;
 import co.streamx.fluent.notation.Context;
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.ParameterContext;
@@ -122,7 +123,7 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @AllowsAlias
+    @Alias.Allowed
     @Function(name = "", omitParentheses = true)
     static By BY(Comparable<?> expression) {
         throw new UnsupportedOperationException();
@@ -184,12 +185,12 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @CommonTableExpression(true)
+    @CommonTableExpression(CommonTableExpressionType.DECLARATION)
     static void WITH(Object... subQueries) {
         throw new UnsupportedOperationException();
     }
 
-    @CommonTableExpression(decorator = true)
+    @CommonTableExpression(CommonTableExpressionType.DECORATOR)
     @Function(omitParentheses = true)
     static <T> T RECURSIVE(T CTE) {
         throw new UnsupportedOperationException();
