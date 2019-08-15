@@ -27,6 +27,11 @@ public interface SQL {
     }
 
     @Function(omitParentheses = true)
+    static VersioningClause FOR(Versioning versioning) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true)
     static <R extends Record<?>> R DISTINCT(Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }

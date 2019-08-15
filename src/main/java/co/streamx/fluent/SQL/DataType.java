@@ -38,6 +38,15 @@ public interface DataType<T extends Comparable<? super T>> {
     }
 
     /**
+     * Casts, but outputs the {@code value} as a string.
+     */
+    default T raw(String value) {
+        @SuppressWarnings("unchecked")
+        T x = (T) value;
+        return x;
+    }
+
+    /**
      * Perform the same operation as {@link #of(String)} and adds {@code postfix} at the end
      */
     @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
