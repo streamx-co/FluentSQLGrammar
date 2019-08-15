@@ -814,6 +814,50 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    // Encryption
+    @Function
+    static String MD5(String expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String SHA1(String expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String SHA2(String expr,
+                       int hashLength) {
+        throw new UnsupportedOperationException();
+    }
+
+    // Locking
+    @Function(underscoresAsBlanks = false)
+    static String GET_LOCK(String name,
+                           int timeout) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static boolean IS_FREE_LOCK(String name) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String IS_USED_LOCK(String name) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static int RELEASE_ALL_LOCKS() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static boolean RELEASE_LOCK(String name) {
+        throw new UnsupportedOperationException();
+    }
+
     // Aggregate
 
     @Function(underscoresAsBlanks = false)
