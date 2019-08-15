@@ -1196,6 +1196,24 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    // Flashback
+
+    @Function(omitParentheses = true)
+    static Clause AS_OF(long SCN) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true)
+    static Clause AS_OF(Timestamp timestamp) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true, omitArgumentsDelimiter = true)
+    static Timestamp PERIOD_FOR(String valid_time_column,
+                                Timestamp timestamp) {
+        throw new UnsupportedOperationException();
+    }
+
     /**
      * Usage example:<br>
      * <br>

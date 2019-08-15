@@ -31,7 +31,7 @@ public enum DataTypeNames implements DataTypeName {
     RAW, LONG_RAW,
 
     // Other types
-    ROWID, UROWID, XMLType, UriType,
+    ROWID, UROWID, XMLType, UriType, SCN,
 
     // BLOBs
     BLOB, BFILE,

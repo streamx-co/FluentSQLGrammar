@@ -38,21 +38,29 @@ public interface DataType<T extends Comparable<? super T>> {
     }
 
     /**
-     * Casts, but outputs the {@code value} as a string.
+     * Perform the same operation as {@link #of(String)} and adds {@code postfix} at the end
      */
-    default T raw(String value) {
-        @SuppressWarnings("unchecked")
-        T x = (T) value;
-        return x;
+    @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
+    default T of(@Literal long constant) {
+        throw new UnsupportedOperationException();
     }
 
     /**
      * Perform the same operation as {@link #of(String)} and adds {@code postfix} at the end
      */
     @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
-    default T of(@Literal int constant,
+    default T of(@Literal long constant,
                  Keyword postfix) {
         throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Casts, but outputs the {@code value} as a string.
+     */
+    default T raw(String value) {
+        @SuppressWarnings("unchecked")
+        T x = (T) value;
+        return x;
     }
 
     /**
