@@ -11,6 +11,7 @@ import java.util.function.Consumer;
 import co.streamx.fluent.JPA.spi.SQLConfigurator;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.Function;
+import co.streamx.fluent.notation.Literal;
 import co.streamx.fluent.notation.Local;
 import co.streamx.fluent.notation.Operator;
 
@@ -310,20 +311,78 @@ public interface SQL {
 
     // Date and Time
     @Function
-    static <T extends Comparable<? super T>> T ADDDATE(T date,
-                                                       Timestamp interval) {
+    static <T extends Date> T ADDDATE(T date,
+                                      Timestamp interval) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static <T extends Comparable<? super T>> T ADDDATE(T date,
-                                                       int days) {
+    static <T extends Temporal> T ADDDATE(T date,
+                                          Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+
+    @Function
+    static <T extends Date> T ADDDATE(T date,
+                                      int days) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static <T extends Comparable<? super T>> T ADDTIME(T date,
-                                                       Comparable<?> time) {
+    static <T extends Temporal> T ADDDATE(T date,
+                                          int days) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Date> T ADDTIME(T date,
+                                      Comparable<?> time) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T ADDTIME(T date,
+                                          Comparable<?> time) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Date> T CONVERT_TZ(T date,
+                                         String from_tz,
+                                         String to_tz) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Temporal> T CONVERT_TZ(T date,
+                                             String from_tz,
+                                             String to_tz) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int CURDATE() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int CURTIME() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static float CURTIME(int fsp) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Date> T DATE(T date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T DATE(T date) {
         throw new UnsupportedOperationException();
     }
 
@@ -339,33 +398,419 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function
-    static int DATEDIFF(String from,
-                        String to) {
+    @Function(underscoresAsBlanks = false)
+    static <T extends Date> T DATE_ADD(T date,
+                                       Timestamp interval) {
         throw new UnsupportedOperationException();
     }
 
     @Function(underscoresAsBlanks = false)
-    static <T extends Comparable<? super T>> T DATE_ADD(T date,
-                                                        Timestamp interval) {
+    static <T extends Temporal> T DATE_ADD(T date,
+                                           Timestamp interval) {
         throw new UnsupportedOperationException();
     }
 
     @Function(underscoresAsBlanks = false)
-    static <T extends Comparable<? super T>> T DATE_SUB(T date,
-                                                        Timestamp interval) {
+    static String DATE_ADD(String date,
+                           Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String DATE_FORMAT(Date date,
+                              String format) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String DATE_FORMAT(Temporal date,
+                              String format) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static String DATEFORMAT(Date date,
+    static String DAYNAME(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DAYOFMONTH(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DAYOFMONTH(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DAYOFWEEK(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DAYOFWEEK(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DAYOFYEAR(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int DAYOFYEAR(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(argumentsDelimiter = " FROM")
+    static String EXTRACT(TimeUnit unit,
+                          Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(argumentsDelimiter = " FROM")
+    static String EXTRACT(TimeUnit unit,
+                          Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String GET_FORMAT(DataTypeNames dateTypeName,
+                             @Literal DateFormatType formatType) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int HOUR(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int HOUR(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int HOUR(String date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Date> T LAST_DAY(T date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T extends Temporal> T LAST_DAY(T date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T> T MAKEDATE(int year,
+                          int dayofyear) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T> T MAKETIME(int hour,
+                          int minute,
+                          int second) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int MICROSECOND(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int MICROSECOND(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int MINUTE(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int MINUTE(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int MONTH(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int MONTH(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String MONTHNAME(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String MONTHNAME(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T> T NOW() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T> T NOW(int fsp) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static int PERIOD_ADD(int period,
+                          int nMonths) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static int PERIOD_DIFF(int period1,
+                           int period2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int QUARTER(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int QUARTER(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int SECOND(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int SECOND(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T SEC_TO_TIME(int seconds) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T STR_TO_DATE(String date,
                              String format) {
         throw new UnsupportedOperationException();
     }
 
+    @Function
+    static <T extends Date> T SUBDATE(T date,
+                                      Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T SUBDATE(T date,
+                                          Timestamp interval) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Date> T SUBDATE(T date,
+                                      int days) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T SUBDATE(T date,
+                                          int days) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Date> T SUBTIME(T expr1,
+                                      T expr2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T SUBTIME(T expr1,
+                                          T expr2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T> T SYSDATE() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T> T SYSDATE(int fsp) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Date> T TIME(T date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T TIME(T date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Date> T TIMEDIFF(T expr1,
+                                       T expr2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static <T extends Temporal> T TIMEDIFF(T expr1,
+                                           T expr2) {
+        throw new UnsupportedOperationException();
+    }
+
     @Function(underscoresAsBlanks = false)
-    static <T extends Date> T STR_TO_DATE(String date,
-                                          String format) {
+    static long TO_DAYS(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static long TO_DAYS(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static long TO_SECONDS(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static long TO_SECONDS(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static long UNIX_TIMESTAMP() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static double UNIX_TIMESTAMP(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static double UNIX_TIMESTAMP(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T UTC_DATE() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T UTC_TIME() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T UTC_TIME(int fsp) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T UTC_TIMESTAMP() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T UTC_TIMESTAMP(int fsp) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEK(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEK(Temporal date,
+                    int mode) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEK(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEK(Date date,
+                    int mode) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEKDAY(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEKDAY(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEKOFYEAR(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int WEEKOFYEAR(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int YEAR(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int YEAR(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int YEARWEEK(Temporal date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int YEARWEEK(Temporal date,
+                        int mode) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int YEARWEEK(Date date) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int YEARWEEK(Date date,
+                        int mode) {
         throw new UnsupportedOperationException();
     }
 

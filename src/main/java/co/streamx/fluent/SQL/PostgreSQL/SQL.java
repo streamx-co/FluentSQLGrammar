@@ -212,7 +212,7 @@ public interface SQL {
      * current transaction's start time
      */
     @Function
-    static Date NOW() {
+    static <T> T NOW() {
         throw new UnsupportedOperationException();
     }
 

@@ -5,6 +5,7 @@ import static co.streamx.fluent.SQL.ScalarFunctions.CAST;
 import java.text.MessageFormat;
 
 import co.streamx.fluent.notation.Function;
+import co.streamx.fluent.notation.Literal;
 import co.streamx.fluent.notation.Local;
 
 /**
@@ -32,6 +33,15 @@ public interface DataType<T extends Comparable<? super T>> {
      */
     @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
     default T literal(String constant,
+                      Keyword postfix) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Perform the same operation as {@link #literal(String)} and adds {@code postfix} at the end
+     */
+    @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
+    default T literal(@Literal int constant,
                       Keyword postfix) {
         throw new UnsupportedOperationException();
     }
