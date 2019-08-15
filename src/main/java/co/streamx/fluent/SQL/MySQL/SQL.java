@@ -464,14 +464,14 @@ public interface SQL {
     }
 
     @Function(argumentsDelimiter = " FROM")
-    static String EXTRACT(TimeUnit unit,
-                          Date date) {
+    static int EXTRACT(TimeUnit unit,
+                       Date date) {
         throw new UnsupportedOperationException();
     }
 
     @Function(argumentsDelimiter = " FROM")
-    static String EXTRACT(TimeUnit unit,
-                          Temporal date) {
+    static int EXTRACT(TimeUnit unit,
+                       Temporal date) {
         throw new UnsupportedOperationException();
     }
 
