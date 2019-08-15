@@ -24,25 +24,25 @@ public interface DataType<T extends Comparable<? super T>> {
      *                 {@code "2001-10-08"} for DATE
      */
     @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
-    default T literal(String constant) {
+    default T of(String constant) {
         throw new UnsupportedOperationException();
     }
 
     /**
-     * Perform the same operation as {@link #literal(String)} and adds {@code postfix} at the end
+     * Perform the same operation as {@link #of(String)} and adds {@code postfix} at the end
      */
     @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
-    default T literal(String constant,
-                      Keyword postfix) {
+    default T of(String constant,
+                 Keyword postfix) {
         throw new UnsupportedOperationException();
     }
 
     /**
-     * Perform the same operation as {@link #literal(String)} and adds {@code postfix} at the end
+     * Perform the same operation as {@link #of(String)} and adds {@code postfix} at the end
      */
     @Function(name = "", omitArgumentsDelimiter = true, omitParentheses = true)
-    default T literal(@Literal int constant,
-                      Keyword postfix) {
+    default T of(@Literal int constant,
+                 Keyword postfix) {
         throw new UnsupportedOperationException();
     }
 
