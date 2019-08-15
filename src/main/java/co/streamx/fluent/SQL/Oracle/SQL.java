@@ -999,7 +999,34 @@ public interface SQL {
     }
 
     @Function(underscoresAsBlanks = false)
+    static int GROUPING_ID(Comparable<?>... expressions) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
     static int GROUP_ID() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String JSON_ARRAYAGG(Comparable<?> expr) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String JSON_OBJECTAGG(Comparable<?> key,
+                                 Comparable<?> value) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String LISTAGG(Comparable<?> expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String LISTAGG(Comparable<?> expression,
+                          String delimiter) {
         throw new UnsupportedOperationException();
     }
 
