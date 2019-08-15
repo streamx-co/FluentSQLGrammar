@@ -227,7 +227,7 @@
   </reporting>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jpa-notations.version>1.0.8</jpa-notations.version>
+		<jpa-notations.version>1.0.9-SNAPSHOT</jpa-notations.version>
 		<lombok.version>1.18.6</lombok.version>
 	</properties>
 </project>
