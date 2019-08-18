@@ -11,7 +11,8 @@ import java.util.function.Consumer;
 import co.streamx.fluent.JPA.spi.SQLConfigurator;
 import co.streamx.fluent.SQL.Clause;
 import co.streamx.fluent.SQL.ColumnsClause;
-import co.streamx.fluent.SQL.Record;
+import co.streamx.fluent.SQL.MatchThen;
+import co.streamx.fluent.SQL.MergeClause;
 import co.streamx.fluent.SQL.UpdateSet;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.Function;
@@ -478,7 +479,7 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    // MERGE declarations (same TSQL/Oracle)
+    // MERGE declarations (SQL:2003 + extensions)
 
     @Function(omitParentheses = true)
     static MergeClause MERGE() {
@@ -526,20 +527,11 @@ public interface SQL {
 
     /**
      * Used in {@link SQL#MERGE()} only<br>
-     * Name changed to avoid clashing
+     * Name changed to avoid clashing with {@link co.streamx.fluent.SQL.SQL#INSERT(co.streamx.fluent.SQL.Keyword...)
+     * INSERT}
      */
     @Function(name = "INSERT", omitParentheses = true, omitArgumentsDelimiter = true)
     static <T> Clause MERGE_INSERT(ColumnsClause<T> columns,
-                                   T values) {
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * Used in {@link SQL#MERGE()} only<br>
-     * Name changed to avoid clashing
-     */
-    @Function(name = "INSERT", omitParentheses = true, omitArgumentsDelimiter = true)
-    static <T> Clause MERGE_INSERT(Record<T> columns,
                                    T values) {
         throw new UnsupportedOperationException();
     }

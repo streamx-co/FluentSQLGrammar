@@ -9,7 +9,11 @@ import java.util.function.Consumer;
 
 import co.streamx.fluent.JPA.spi.SQLConfigurator;
 import co.streamx.fluent.SQL.Clause;
+import co.streamx.fluent.SQL.ColumnsClause;
 import co.streamx.fluent.SQL.DataType;
+import co.streamx.fluent.SQL.MatchThen;
+import co.streamx.fluent.SQL.MergeClause;
+import co.streamx.fluent.SQL.Record;
 import co.streamx.fluent.SQL.SortOrder;
 import co.streamx.fluent.SQL.UpdateSet;
 import co.streamx.fluent.SQL.WindowFrame;
@@ -1126,27 +1130,7 @@ public interface SQL {
     }
 
     @Function(omitParentheses = true)
-    static MatchThen WHEN_MATCHED_AND(boolean searchCondition) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Function(omitParentheses = true)
     static MatchThen WHEN_NOT_MATCHED() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Function(omitParentheses = true)
-    static MatchThen WHEN_NOT_MATCHED_AND(boolean searchCondition) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Function(omitParentheses = true)
-    static MatchThen WHEN_NOT_MATCHED_BY_SOURCE() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Function(omitParentheses = true)
-    static MatchThen WHEN_NOT_MATCHED_BY_SOURCE_AND(boolean searchCondition) {
         throw new UnsupportedOperationException();
     }
 
@@ -1164,8 +1148,20 @@ public interface SQL {
      * Name changed to avoid clashing with {@link co.streamx.fluent.SQL.SQL#INSERT(co.streamx.fluent.SQL.Keyword...)
      * INSERT}
      */
-    @Function(name = "INSERT", omitParenthesesIfArgumentess = true)
-    static Clause MERGE_INSERT(Object... columns) {
+    @Function(name = "INSERT", omitParentheses = true, omitArgumentsDelimiter = true)
+    static <T> Clause MERGE_INSERT(ColumnsClause<T> columns,
+                                   T values) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Used in {@link SQL#MERGE()} only<br>
+     * Name changed to avoid clashing with {@link co.streamx.fluent.SQL.SQL#INSERT(co.streamx.fluent.SQL.Keyword...)
+     * INSERT}
+     */
+    @Function(name = "INSERT", omitParentheses = true, omitArgumentsDelimiter = true)
+    static <T> Clause MERGE_INSERT(Record<T> columns,
+                                   T values) {
         throw new UnsupportedOperationException();
     }
 

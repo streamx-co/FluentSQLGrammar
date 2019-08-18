@@ -9,6 +9,8 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import co.streamx.fluent.JPA.spi.SQLConfigurator;
+import co.streamx.fluent.SQL.Clause;
+import co.streamx.fluent.functions.Consumer0;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.Literal;
@@ -16,6 +18,13 @@ import co.streamx.fluent.notation.Local;
 import co.streamx.fluent.notation.Operator;
 
 public interface SQL {
+
+    // Clauses
+
+    @Function(omitParentheses = true)
+    static Clause ON_DUPLICATE_KEY_UPDATE(Consumer0 updates) {
+        throw new UnsupportedOperationException();
+    }
 
     // String
 

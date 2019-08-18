@@ -1,9 +1,9 @@
-package co.streamx.fluent.SQL.TransactSQL;
+package co.streamx.fluent.SQL;
 
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.ParameterContext;
 
-public interface MergeUsing {
+public interface MergeClause {
     @Function(omitParentheses = true, parameterContext = ParameterContext.FROM)
-    MergeCondition USING(Object sourceTableReference);
+    MergeUsing INTO(Object targetTableReference);
 }

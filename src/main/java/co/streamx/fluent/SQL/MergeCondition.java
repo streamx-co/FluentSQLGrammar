@@ -1,4 +1,4 @@
-package co.streamx.fluent.SQL.Oracle;
+package co.streamx.fluent.SQL;
 
 import co.streamx.fluent.notation.Function;
 
