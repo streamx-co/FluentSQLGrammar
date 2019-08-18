@@ -12,7 +12,8 @@ import co.streamx.fluent.notation.ParameterContext;
 public interface SQL {
 
     @Function(omitParentheses = true, parameterContext = ParameterContext.SELECT)
-    static SelectClause SELECT(Object expression) {
+    static SelectClause SELECT(Object expression,
+                               Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 
@@ -36,8 +37,9 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function(omitParentheses = true)
-    static <R extends Record<?>> R DISTINCT(Object expression) {
+    @Function(omitParentheses = true, parameterContext = ParameterContext.SELECT)
+    static <R extends Record<?>> R DISTINCT(Object expression,
+                                            Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 
@@ -46,8 +48,9 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function(name = "", omitParentheses = true)
-    static <R extends Record<?>> R ALL(Object expression) {
+    @Function(name = "", omitParentheses = true, parameterContext = ParameterContext.SELECT)
+    static <R extends Record<?>> R ALL(Object expression,
+                                       Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 
@@ -156,7 +159,7 @@ public interface SQL {
 
     @SafeVarargs
     @Function(omitParentheses = true, requiresAlias = true)
-    static <T extends Record<T>, R extends T> R VALUES(T... rows) {
+    static <R, T extends Record<R>> R VALUES(T... rows) {
         throw new UnsupportedOperationException();
     }
 
@@ -201,7 +204,7 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function(omitParentheses = true, parameterContext = ParameterContext.FROM_WITHOUT_ALIAS, parameterContextCapabilities = Capability.ALIAS_INSERT)
+    @Function(omitParentheses = true)
     static InsertClause INSERT(Keyword... hints) {
         throw new UnsupportedOperationException();
     }
@@ -236,7 +239,7 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function(omitParentheses = true, parameterContext = ParameterContext.FROM_WITHOUT_ALIAS, parameterContextCapabilities = Capability.ALIAS_DELETE)
+    @Function(omitParentheses = true)
     static DeleteClause DELETE(Keyword... hints) {
         throw new UnsupportedOperationException();
     }

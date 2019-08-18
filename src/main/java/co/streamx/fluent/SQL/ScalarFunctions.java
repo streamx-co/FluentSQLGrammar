@@ -270,6 +270,10 @@ public interface ScalarFunctions {
 
     // Date / Time
 
+    /**
+     * Not supported in SQL Server. See <a href=
+     * "https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql">docs</a>
+     */
     @Function(underscoresAsBlanks = false, omitParentheses = true)
     static <T extends Date> T CURRENT_DATE() {
         throw new UnsupportedOperationException();

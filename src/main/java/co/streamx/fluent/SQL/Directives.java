@@ -14,6 +14,7 @@ import co.streamx.fluent.functions.Consumer9;
 import co.streamx.fluent.functions.Function1;
 import co.streamx.fluent.notation.Alias;
 import co.streamx.fluent.notation.BlockTerminator;
+import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.CommonTableExpression;
 import co.streamx.fluent.notation.CommonTableExpressionType;
 import co.streamx.fluent.notation.Context;
@@ -29,7 +30,7 @@ public interface Directives {
 
     @SafeVarargs
     @CommonTableExpression(CommonTableExpressionType.DECORATOR)
-    @Function(name = "", omitParentheses = true)
+    @Function(name = "", omitParentheses = true, parameterContext = ParameterContext.FROM_WITHOUT_ALIAS, parameterContextCapabilities = Capability.ALIAS_INSERT)
     @Operator
     @ViewDeclaration
     static <T> View<T> viewOf(T tableReference,
@@ -188,6 +189,11 @@ public interface Directives {
                 return sql;
             }
         };
+    }
+
+    @Function(name = "--", omitParentheses = true)
+    static void comment(Object... statements) {
+        throw new UnsupportedOperationException();
     }
 
     /**
