@@ -250,6 +250,13 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    @Operator
+    @Function(omitParentheses = true)
+    static <T> boolean IS_DISTINCT_FROM(T expr1,
+                                        T expr2) {
+        throw new UnsupportedOperationException();
+    }
+
     // Aggregate / statistics
 
     @Function
