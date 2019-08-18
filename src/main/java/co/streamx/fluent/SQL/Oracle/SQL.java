@@ -1165,6 +1165,30 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    // Sequence
+    @Local
+    static <T extends Number> Sequence<T> sequence(String name) {
+        return new Sequence<T>() {
+            private final String seq = name + ".";
+            @Override
+            public String toString() {
+                return seq;
+            }
+        };
+    }
+
+    // pseudocolumns
+
+    @Function(omitParentheses = true)
+    static String ROWID() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true)
+    static long ROWNUM() {
+        throw new UnsupportedOperationException();
+    }
+
     // Error Logging
 
     @Function(omitParentheses = true)

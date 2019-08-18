@@ -336,6 +336,35 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    // Sequence Manipulation Functions
+    @Function
+    static long CURRVAL(String sequence) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static long LASTVAL() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static long NEXTVAL(String sequence) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static long SETVAL(String sequence,
+                       long value) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static long SETVAL(String sequence,
+                       long value,
+                       boolean isCalled) {
+        throw new UnsupportedOperationException();
+    }
+
     /**
      * Usage example:<br>
      * <br>

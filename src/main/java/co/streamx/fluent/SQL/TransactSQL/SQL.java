@@ -14,6 +14,7 @@ import co.streamx.fluent.SQL.ColumnsClause;
 import co.streamx.fluent.SQL.MatchThen;
 import co.streamx.fluent.SQL.MergeClause;
 import co.streamx.fluent.SQL.UpdateSet;
+import co.streamx.fluent.SQL.WindowOver;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.Literal;
@@ -533,6 +534,23 @@ public interface SQL {
     @Function(name = "INSERT", omitParentheses = true, omitArgumentsDelimiter = true)
     static <T> Clause MERGE_INSERT(ColumnsClause<T> columns,
                                    T values) {
+        throw new UnsupportedOperationException();
+    }
+
+    // Sequence
+
+    @Local
+    static <T extends Number & Comparable<? super T>> Sequence<T> sequence(String name) {
+        return new Sequence<T>() {
+            @Override
+            public String toString() {
+                return name;
+            }
+        };
+    }
+
+    @Function(omitParentheses = true)
+    static <T extends Number & Comparable<? super T>> WindowOver<T> NEXT_VALUE_FOR(Sequence<T> sequence) {
         throw new UnsupportedOperationException();
     }
 
