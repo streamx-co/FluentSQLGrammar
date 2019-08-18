@@ -8,18 +8,18 @@ import co.streamx.fluent.notation.ViewDeclaration;
 public interface View<T> {
 
     /**
-     * Generates a select row of the view columns from the entity originally used to create this view.
+     * Generates a {@link Record} of view columns selected <b>from</b> the entity originally used to create this view.
      */
     @Function(name = "")
-    @ViewDeclaration.Select
-    Record<T> select();
+    @ViewDeclaration.From
+    Record<T> from();
 
     /**
-     * Generates a select row of the view columns from the passed entity.
+     * Generates a {@link Record} of view columns selected <b>from</b> the passed entity.
      */
     @Function(name = "")
-    @ViewDeclaration.Select
-    Record<T> select(T entity);
+    @ViewDeclaration.From
+    Record<T> from(T entity);
 
     /**
      * Generates column names (declaration, e.g. for INSERT)
@@ -27,4 +27,11 @@ public interface View<T> {
     @Function(name = "")
     @ViewDeclaration.Columns
     ColumnsClause<T> columnNames();
+
+    /**
+     * Generates column names (declaration, e.g. for INSERT)
+     */
+    @Function(name = "", omitParentheses = true)
+    @ViewDeclaration.Alias
+    T alias(Comparable<?>... values);
 }
