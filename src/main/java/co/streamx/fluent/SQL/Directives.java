@@ -34,7 +34,7 @@ public interface Directives {
     @Operator
     @ViewDeclaration
     static <T> View<T> viewOf(T tableReference,
-                              @Context(ParameterContext.ALIAS) Function1<T, ?>... columns) {
+                              @Context(ParameterContext.ALIAS) Function1<T, Comparable<?>>... columns) {
         throw new UnsupportedOperationException();
     }
 

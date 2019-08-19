@@ -15,11 +15,24 @@ public interface View<T> {
     Record<T> from();
 
     /**
-     * Generates a {@link Record} of view columns selected <b>from</b> the passed entity.
+     * Generates a {@link Record} of view columns selected <b>from</b> the passed entity. See
+     * {@link View#fromAliased(Object, Comparable...)}
+     * 
+     * @param overrides Lets "override" returned values. E.g. if view has 3 columns and 1 value is provided, the first 2
+     *                  will be taken from the entity and the last will be the "override".
      */
     @Function(name = "")
     @ViewDeclaration.From
-    Record<T> from(T entity);
+    Record<T> from(T source,
+                   Comparable<?>... overrides);
+
+    /**
+     * Same as {@link #from(Object, Comparable...)}, with all columns aliased.
+     */
+    @Function(name = "", omitParentheses = true)
+    @ViewDeclaration.From(aliased = true)
+    Record<T> fromAliased(T source,
+                          Comparable<?>... overrides);
 
     /**
      * Generates column names (declaration, e.g. for INSERT)
@@ -29,7 +42,7 @@ public interface View<T> {
     ColumnsClause<T> columnNames();
 
     /**
-     * Generates column names (declaration, e.g. for INSERT)
+     * Generates aliased record (e.g. for SELECT)
      */
     @Function(name = "", omitParentheses = true)
     @ViewDeclaration.Alias
