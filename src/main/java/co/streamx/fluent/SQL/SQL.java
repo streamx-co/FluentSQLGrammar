@@ -184,12 +184,7 @@ public interface SQL {
     }
 
     @Function(omitParentheses = true)
-    static Offset OFFSET(long offsetRowCount) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Function(name = "FETCH NEXT", omitParentheses = true)
-    static Fetch FETCH(long fetchRowCount) {
+    static Offset OFFSET(int offset) {
         throw new UnsupportedOperationException();
     }
 

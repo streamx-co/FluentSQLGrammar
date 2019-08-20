@@ -303,7 +303,13 @@ public interface SQL {
     }
 
     @Function(omitParentheses = true)
-    static void LIMIT(long rowCount) {
+    static Clause LIMIT(int rowCount) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true)
+    static Clause LIMIT(int offset,
+                        int rowCount) {
         throw new UnsupportedOperationException();
     }
 

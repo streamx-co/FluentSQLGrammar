@@ -1,8 +1,8 @@
 package co.streamx.fluent.SQL;
 
 import static co.streamx.fluent.SQL.Directives.subQuery;
-import static co.streamx.fluent.SQL.SQL.FETCH;
 import static co.streamx.fluent.SQL.SQL.FROM;
+import static co.streamx.fluent.SQL.SQL.OFFSET;
 import static co.streamx.fluent.SQL.SQL.SELECT;
 import static co.streamx.fluent.SQL.ScalarFunctions.COALESCE;
 
@@ -19,10 +19,20 @@ public interface Library {
     }
 
     /**
-     * Translates to {@link SQL#FETCH(long)}.ROWS(). Use vendor specific variant if preferred.
+     * Translates to {@link SQL#OFFSET(int) OFFSET(0).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY()}. Use vendor specific
+     * variant if preferred.
      */
-    static void LIMIT(long rowCount) {
-        FETCH(rowCount).ROWS();
+    static void LIMIT(int rowCount) {
+        LIMIT(0, rowCount);
+    }
+
+    /**
+     * Translates to {@link SQL#OFFSET(int) OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY()}. Use vendor specific
+     * variant if preferred.
+     */
+    static void LIMIT(int offset,
+                      int rowCount) {
+        OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY();
     }
 
     /**

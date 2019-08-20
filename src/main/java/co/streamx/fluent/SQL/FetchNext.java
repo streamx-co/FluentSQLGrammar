@@ -2,7 +2,7 @@ package co.streamx.fluent.SQL;
 
 import co.streamx.fluent.notation.Function;
 
-public interface Fetch {
+public interface FetchNext {
     @Function(omitParentheses = true)
-    Clause ROWS_ONLY();
+    Fetch FETCH_NEXT(int rowCount);
 }

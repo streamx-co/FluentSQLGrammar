@@ -4,5 +4,5 @@ import co.streamx.fluent.notation.Function;
 
 public interface Offset {
     @Function(omitParentheses = true)
-    void ROWS();
+    FetchNext ROWS();
 }
