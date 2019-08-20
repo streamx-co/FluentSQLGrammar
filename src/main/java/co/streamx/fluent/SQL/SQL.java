@@ -1,7 +1,6 @@
 package co.streamx.fluent.SQL;
 
 import co.streamx.fluent.functions.Function1;
-import co.streamx.fluent.notation.Alias;
 import co.streamx.fluent.notation.Capability;
 import co.streamx.fluent.notation.CommonTableExpression;
 import co.streamx.fluent.notation.CommonTableExpressionType;
@@ -126,12 +125,11 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function(name = "ORDER BY", omitParentheses = true, aliasesVisible = true)
+    @Function(name = "ORDER BY", omitParentheses = true)
     static WindowFrame ORDER(SortOrder... sorts) {
         throw new UnsupportedOperationException();
     }
 
-    @Alias.Allowed
     @Function(name = "", omitParentheses = true)
     static By BY(Comparable<?> expression) {
         throw new UnsupportedOperationException();

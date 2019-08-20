@@ -1107,7 +1107,7 @@ public interface SQL {
 
     // General
 
-    @Function(name = "ORDER SIBLINGS BY", omitParentheses = true, aliasesVisible = true)
+    @Function(name = "ORDER SIBLINGS BY", omitParentheses = true)
     static WindowFrame ORDER_SIBLINGS(SortOrder... sorts) {
         throw new UnsupportedOperationException();
     }
