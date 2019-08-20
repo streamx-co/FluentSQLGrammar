@@ -1,6 +1,6 @@
 package co.streamx.fluent.SQL.MySQL;
 
-import co.streamx.fluent.SQL.Keyword;
+import co.streamx.fluent.notation.Keyword;
 
 public enum TimeUnit implements Keyword {
     MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, YEAR, SECOND_MICROSECOND, MINUTE_MICROSECOND,

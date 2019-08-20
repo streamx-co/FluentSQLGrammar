@@ -1,7 +1,7 @@
 package co.streamx.fluent.SQL.Oracle;
 
-import co.streamx.fluent.SQL.Keyword;
 import co.streamx.fluent.notation.Function;
+import co.streamx.fluent.notation.Keyword;
 
 public interface Sequence<T extends Number> extends Keyword {
     @Function(omitParentheses = true)

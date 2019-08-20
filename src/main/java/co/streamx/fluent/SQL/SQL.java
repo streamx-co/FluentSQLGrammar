@@ -6,6 +6,7 @@ import co.streamx.fluent.notation.CommonTableExpression;
 import co.streamx.fluent.notation.CommonTableExpressionType;
 import co.streamx.fluent.notation.Context;
 import co.streamx.fluent.notation.Function;
+import co.streamx.fluent.notation.Keyword;
 import co.streamx.fluent.notation.ParameterContext;
 
 public interface SQL {
@@ -188,6 +189,12 @@ public interface SQL {
 
     @CommonTableExpression(CommonTableExpressionType.DECLARATION)
     static void WITH(Object... subQueries) {
+        throw new UnsupportedOperationException();
+    }
+
+    @CommonTableExpression(CommonTableExpressionType.DECLARATION)
+    static void WITH(Keyword inject,
+                     Object... subQueries) {
         throw new UnsupportedOperationException();
     }
 

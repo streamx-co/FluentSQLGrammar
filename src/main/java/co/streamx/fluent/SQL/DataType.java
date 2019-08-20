@@ -5,6 +5,7 @@ import static co.streamx.fluent.SQL.ScalarFunctions.CAST;
 import java.text.MessageFormat;
 
 import co.streamx.fluent.notation.Function;
+import co.streamx.fluent.notation.Keyword;
 import co.streamx.fluent.notation.Literal;
 import co.streamx.fluent.notation.Local;
 

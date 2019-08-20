@@ -19,6 +19,7 @@ import co.streamx.fluent.notation.CommonTableExpression;
 import co.streamx.fluent.notation.CommonTableExpressionType;
 import co.streamx.fluent.notation.Context;
 import co.streamx.fluent.notation.Function;
+import co.streamx.fluent.notation.Keyword;
 import co.streamx.fluent.notation.Local;
 import co.streamx.fluent.notation.Operator;
 import co.streamx.fluent.notation.Parameter;
@@ -173,7 +174,8 @@ public interface Directives {
     }
 
     /**
-     * Use previously created alias outside of SELECT. (Inside SELECT it's used automatically).
+     * Use previously created alias outside of SELECT to beautify the produced SQL. (Inside SELECT it's used
+     * automatically, where it actually has an effect).
      */
     @Alias.Use
     static <T> T aliasOf(T expression) {

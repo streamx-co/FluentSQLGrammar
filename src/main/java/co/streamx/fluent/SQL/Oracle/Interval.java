@@ -1,6 +1,6 @@
 package co.streamx.fluent.SQL.Oracle;
 
-import co.streamx.fluent.SQL.Keyword;
+import co.streamx.fluent.notation.Keyword;
 
 public enum Interval implements Keyword {
     DAY_TO_SECOND,

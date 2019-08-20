@@ -528,7 +528,7 @@ public interface SQL {
 
     /**
      * Used in {@link SQL#MERGE()} only<br>
-     * Name changed to avoid clashing with {@link co.streamx.fluent.SQL.SQL#INSERT(co.streamx.fluent.SQL.Keyword...)
+     * Name changed to avoid clashing with {@link co.streamx.fluent.SQL.SQL#INSERT(co.streamx.fluent.notation.Keyword...)
      * INSERT}
      */
     @Function(name = "INSERT", omitParentheses = true, omitArgumentsDelimiter = true)
