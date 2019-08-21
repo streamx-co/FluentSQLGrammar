@@ -42,6 +42,16 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    @Function(omitParentheses = true)
+    static <T> T CROSS_APPLY(T subQuery) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(omitParentheses = true)
+    static <T> T OUTER_APPLY(T subQuery) {
+        throw new UnsupportedOperationException();
+    }
+
     // Math
 
     @Function

@@ -243,6 +243,4 @@ public interface SQL {
     static DeleteClause DELETE(Keyword... hints) {
         throw new UnsupportedOperationException();
     }
-
-    // LATERAL
 }

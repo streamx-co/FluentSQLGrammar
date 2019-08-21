@@ -18,6 +18,11 @@ import co.streamx.fluent.notation.ParameterContext;
 
 public interface SQL {
 
+    @Function(omitParentheses = true)
+    static <T> T LATERAL(T subQuery) {
+        throw new UnsupportedOperationException();
+    }
+
     // String
 
     @Function
