@@ -3,7 +3,8 @@ package co.streamx.fluent.SQL.Oracle;
 import co.streamx.fluent.SQL.DataTypeName;
 
 /**
- * @see <a href="https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm">Oracle Data Types</a>
+ * @see <a href="https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm">Oracle Data Types</a>,
+ *      <a href="http://psoug.org/reference/datatypes.html">Data Types</a>
  */
 public enum DataTypeNames implements DataTypeName {
 
@@ -14,8 +15,8 @@ public enum DataTypeNames implements DataTypeName {
     // LOB Character
     CLOB, NCLOB, LONG,
 
-    // Exact numerics
-    NUMBER, FLOAT,
+    // Exact numerics (NUMBER subtypes)
+    NUMBER, INT, INTEGER, SMALLINT, DEC, DECIMAL, NUMERIC, DOUBLE_PRECISION, FLOAT, REAL,
 
     // Approximate numerics
     BINARY_FLOAT, BINARY_DOUBLE,
@@ -41,7 +42,8 @@ public enum DataTypeNames implements DataTypeName {
     private final String replaced;
 
     private DataTypeNames() {
-        replaced = super.toString().replace('_', ' ');
+        String original = super.toString();
+        replaced = original.startsWith("BINARY_") ? original : original.replace('_', ' ');
     }
 
     @Override

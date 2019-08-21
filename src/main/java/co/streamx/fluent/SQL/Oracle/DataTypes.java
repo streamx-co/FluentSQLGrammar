@@ -16,22 +16,22 @@ public interface DataTypes {
     /**
      * 2 bytes
      */
-    final DataType<Short> SHORT = DataTypeNames.NUMBER.create();
+    final DataType<Short> SHORT = DataTypeNames.SMALLINT.create();
 
     /**
      * 4 bytes
      */
-    final DataType<Integer> INT = DataTypeNames.NUMBER.create();
+    final DataType<Integer> INT = DataTypeNames.INT.create();
 
     /**
      * 8 bytes
      */
-    final DataType<Long> LONG = DataTypeNames.NUMBER.create();
+    final DataType<Long> LONG = DataTypeNames.INT.create();
 
     final DataType<BigDecimal> BigDecimal = DataTypeNames.NUMBER.create();
     final DataType<BigInteger> BigInteger = DataTypeNames.NUMBER.create();
 
-    final DataType<Float> FLOAT = DataTypeNames.FLOAT.create();
+    final DataType<Float> FLOAT = DataTypeNames.REAL.create();
     final DataType<Double> DOUBLE = DataTypeNames.FLOAT.create();
 
     final DataType<Long> SCN = DataTypeNames.SCN.create();
