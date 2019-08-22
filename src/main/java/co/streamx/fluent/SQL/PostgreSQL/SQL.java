@@ -31,12 +31,101 @@ public interface SQL {
     }
 
     @Function
-    static long LENGTH(String expression) {
+    static String CONVERT_FROM(String expression,
+                               String sourceCharSet) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String CONVERT_TO(String expression,
+                             String destinationCharSet) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String CONVERT(String expression,
+                          String destinationCharSet,
+                          String sourceCharSet) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String DECODE(String expression,
+                         String format) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String ENCODE(String expression,
+                         String format) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String FORMAT(String format,
+                         Object... arguments) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String INITCAP(String expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int LENGTH(String expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static int LENGTH(String expression,
+                      String encoding) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String LPAD(String expression,
+                       int length) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String LPAD(String expression,
+                       int length,
+                       String padWith) {
         throw new UnsupportedOperationException();
     }
 
     @Function
     static String MD5(CharSequence expression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_REPLACE(String expression,
+                                 String pattern,
+                                 String replaceExpression) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static String REGEXP_REPLACE(String expression,
+                                 String pattern,
+                                 String replaceExpression,
+                                 String flags) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String RPAD(String expression,
+                       int length) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function
+    static String RPAD(String expression,
+                       int length,
+                       String padWith) {
         throw new UnsupportedOperationException();
     }
 
@@ -295,7 +384,7 @@ public interface SQL {
     }
 
     @Function(underscoresAsBlanks = false)
-    static long REGR_COUNT(double y,
+    static int REGR_COUNT(double y,
                            double x) {
         throw new UnsupportedOperationException();
     }

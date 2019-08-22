@@ -22,17 +22,26 @@ public interface Library {
      * Translates to {@link SQL#OFFSET(int) OFFSET(0).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY()}. Use vendor specific
      * variant if preferred.
      */
-    static void LIMIT(int rowCount) {
-        LIMIT(0, rowCount);
+    static Clause LIMIT(int rowCount) {
+        return LIMIT(0, rowCount);
     }
 
     /**
      * Translates to {@link SQL#OFFSET(int) OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY()}. Use vendor specific
      * variant if preferred.
      */
-    static void LIMIT(int offset,
-                      int rowCount) {
-        OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY();
+    static Clause LIMIT(int offset,
+                        int rowCount) {
+        return OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY();
+    }
+
+    /**
+     * Translates to {@link SQL#OFFSET(int) OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_ONLY()}. Use vendor specific
+     * variant if preferred.
+     */
+    static Clause LIMIT_WITH_TIES(int offset,
+                                  int rowCount) {
+        return OFFSET(offset).ROWS().FETCH_NEXT(rowCount).ROWS_WITH_TIES();
     }
 
     /**

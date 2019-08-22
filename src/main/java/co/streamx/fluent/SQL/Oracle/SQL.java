@@ -52,6 +52,11 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    @Function(omitParentheses = true)
+    static void MINUS() {
+        throw new UnsupportedOperationException();
+    }
+
     // Math
 
     @Function
@@ -476,27 +481,27 @@ public interface SQL {
     }
 
     @Function
-    static long LENGTH(CharSequence expression) {
+    static int LENGTH(CharSequence expression) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static long LENGTHB(CharSequence expression) {
+    static int LENGTHB(CharSequence expression) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static long LENGTHC(CharSequence expression) {
+    static int LENGTHC(CharSequence expression) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static long LENGTH2(CharSequence expression) {
+    static int LENGTH2(CharSequence expression) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static long LENGTH4(CharSequence expression) {
+    static int LENGTH4(CharSequence expression) {
         throw new UnsupportedOperationException();
     }
 
@@ -1008,7 +1013,7 @@ public interface SQL {
     }
 
     @Function(underscoresAsBlanks = false)
-    static long DENSE_RANK(Number... expressions) {
+    static int DENSE_RANK(Number... expressions) {
         throw new UnsupportedOperationException();
     }
 
@@ -1062,7 +1067,7 @@ public interface SQL {
     }
 
     @Function(underscoresAsBlanks = false)
-    static long REGR_COUNT(Object expression1,
+    static int REGR_COUNT(Object expression1,
                            Object expression2) {
         throw new UnsupportedOperationException();
     }
@@ -1195,7 +1200,7 @@ public interface SQL {
     }
 
     @Function(omitParentheses = true)
-    static long ROWNUM() {
+    static int ROWNUM() {
         throw new UnsupportedOperationException();
     }
 

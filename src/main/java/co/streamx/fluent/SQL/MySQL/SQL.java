@@ -69,18 +69,18 @@ public interface SQL {
     }
 
     @Function
-    static long LENGTH(String expression) {
+    static int LENGTH(String expression) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static long LOCATE(String expressionToFind,
+    static int LOCATE(String expressionToFind,
                        String expressionToSearch) {
         throw new UnsupportedOperationException();
     }
 
     @Function
-    static long LOCATE(String expressionToFind,
+    static int LOCATE(String expressionToFind,
                        String expressionToSearch,
                        Number startLocation) {
         throw new UnsupportedOperationException();
