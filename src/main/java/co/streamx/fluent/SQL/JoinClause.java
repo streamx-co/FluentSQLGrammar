@@ -3,14 +3,12 @@ package co.streamx.fluent.SQL;
 import co.streamx.fluent.notation.Context;
 import co.streamx.fluent.notation.Function;
 import co.streamx.fluent.notation.ParameterContext;
-import co.streamx.fluent.notation.TableCollection;
 
 public interface JoinClause extends Clause {
     /**
      * Creates an INNER JOIN
      */
     @Function(name = "INNER JOIN", omitParentheses = true, parameterContext = ParameterContext.FROM)
-    @TableCollection.Property
     <T> JoinCondition<T> JOIN(T tableReference);
 
     /**
