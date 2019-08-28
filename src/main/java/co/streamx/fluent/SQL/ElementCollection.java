@@ -13,7 +13,7 @@ public interface ElementCollection<OWNER, ELEMENT> {
      * Generates the association between the Collection Table and the entity declaring the collection. i.e. in case of
      * <br>
      * <br>
-     * {@code join(user, User::getPhones}, <br>
+     * {@code join(user, User::getPhones)}, <br>
      * <br>
      * the association will be between the Element Table and User entity. And the generated SQL may look like:<br>
      * <br>

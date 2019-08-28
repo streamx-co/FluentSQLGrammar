@@ -20,7 +20,7 @@ public interface JoinTable<JOINED, INVERSE_JOINED> {
      * Generates the association between the Join Table and the entity declaring the collection, regardless if it's an
      * owning entity or not. i.e. in case of <br>
      * <br>
-     * {@code join(customer, Customer::getPhones}, <br>
+     * {@code join(customer, Customer::getPhones)}, <br>
      * <br>
      * the association will be between the Join Table and Customer entity. And the generated SQL may look like:<br>
      * <br>
