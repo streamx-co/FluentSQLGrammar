@@ -250,4 +250,15 @@ public interface Directives {
                                 String name) {
         throw new UnsupportedOperationException();
     }
+
+
+    /**
+     * Prepends an additional element to an existing {@code varargs} array. Useful for constructing varargs for
+     * <a href="https://github.com/streamx-co/FluentJPA/wiki/Dynamic-Queries">Dynamic Queries</a>.
+     */
+    @Function(name = "", omitParentheses = true)
+    static <T extends Comparable<?>> T[] varargs(T prepend,
+                                                 Comparable<?>... args) {
+        throw new UnsupportedOperationException();
+    }
 }
