@@ -24,7 +24,6 @@ import co.streamx.fluent.notation.Local;
 import co.streamx.fluent.notation.Operator;
 import co.streamx.fluent.notation.Parameter;
 import co.streamx.fluent.notation.ParameterContext;
-import co.streamx.fluent.notation.ReferenceSecondaryTable;
 import co.streamx.fluent.notation.SubQuery;
 import co.streamx.fluent.notation.ViewDeclaration;
 
@@ -233,24 +232,6 @@ public interface Directives {
     static void semicolon() {
         throw new UnsupportedOperationException();
     }
-
-    /**
-     * Reference secondary table. There must be exactly one secondary table.
-     */
-    @ReferenceSecondaryTable
-    static <T> T secondaryTable(T entity) {
-        throw new UnsupportedOperationException();
-    }
-
-    /**
-     * Reference secondary table
-     */
-    @ReferenceSecondaryTable
-    static <T> T secondaryTable(T entity,
-                                String name) {
-        throw new UnsupportedOperationException();
-    }
-
 
     /**
      * Prepends an additional element to an existing {@code varargs} array. Useful for constructing varargs for
