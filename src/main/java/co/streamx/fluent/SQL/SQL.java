@@ -32,7 +32,7 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
-    @Function(omitParentheses = true)
+    @Function(omitParentheses = true, parameterContext = ParameterContext.SELECT)
     static <R extends Record<?>> R DISTINCT(Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }

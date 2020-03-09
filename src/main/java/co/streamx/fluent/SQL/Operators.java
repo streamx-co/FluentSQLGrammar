@@ -55,14 +55,14 @@ public interface Operators {
                                T lowLimit,
                                T highLimit) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function
     @Operator(omitParentheses = true)
     static String COLLATE(String expression,
                            String collation) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function(omitParentheses = true)
     static boolean EXISTS(Object subQuery) {
@@ -75,21 +75,21 @@ public interface Operators {
     static <T extends Comparable<T>> boolean IN(T expressionToMatch,
                                                 T... valuesOrCollectionOrSubQuery) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function
     @Operator(omitParentheses = true)
     static <T extends Comparable<T>> boolean IN(T expressionToMatch,
                                                 Collection<? super T> collection) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function
     @Operator(omitParentheses = true)
     static boolean LIKE(String stringToMatch,
                         String pattern) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function(argumentsDelimiter = " ESCAPE")
     @Operator(omitParentheses = true)
@@ -97,14 +97,14 @@ public interface Operators {
                         String pattern,
                         char escapeCharacter) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function
     @Operator(omitParentheses = true)
     static boolean SIMILAR_TO(String stringToMatch,
                               String pattern) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function(argumentsDelimiter = " ESCAPE")
     @Operator(omitParentheses = true)
@@ -112,13 +112,13 @@ public interface Operators {
                               String pattern,
                               char escapeCharacter) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function
     @Operator(right = false)
-    static <T> boolean NOT(boolean expression) {
+    static boolean NOT(boolean expression) {
         throw new UnsupportedOperationException();
-    };
+    }
 
     @Function
     @Operator(omitParentheses = true)

@@ -1,5 +1,5 @@
 package co.streamx.fluent.SQL;
 
-public interface WhereClause {
+public interface WhereClause extends Clause {
 
 }

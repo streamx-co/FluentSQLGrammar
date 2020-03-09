@@ -14,13 +14,13 @@ public interface ScalarFunctions {
     }
 
     @Function
-    static String CONCAT(Object... expressions) {
+    static String CONCAT(Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 
     @Function
     static String CONCAT_WS(String separator,
-                            Object... expressions) {
+                            Comparable<?>... expressions) {
         throw new UnsupportedOperationException();
     }
 

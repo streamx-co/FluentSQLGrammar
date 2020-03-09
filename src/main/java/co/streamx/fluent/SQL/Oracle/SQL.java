@@ -1108,9 +1108,19 @@ public interface SQL {
         throw new UnsupportedOperationException();
     }
 
+    @Function(underscoresAsBlanks = false)
+    static <T> T FIRST_VALUE(T expression) {
+        throw new UnsupportedOperationException();
+    }
+
     @Function(underscoresAsBlanks = false, omitArgumentsDelimiter = true)
     static <T> T FIRST_VALUE(T expression,
                              Ignore ignore) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Function(underscoresAsBlanks = false)
+    static <T> T LAST_VALUE(T expression) {
         throw new UnsupportedOperationException();
     }
 
