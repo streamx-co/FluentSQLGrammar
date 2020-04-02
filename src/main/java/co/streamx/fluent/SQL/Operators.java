@@ -33,7 +33,7 @@ public interface Operators {
 
     // Logical operators
     @Function(omitParentheses = true)
-    static <T extends Comparable<? super T>> T ALL(T subQuery) {
+    static <T extends Comparable<? super T>> T ALL(Collection<T> subQuery) {
         throw new UnsupportedOperationException();
     }
 
@@ -45,7 +45,7 @@ public interface Operators {
     }
 
     @Function(omitParentheses = true)
-    static <T extends Comparable<? super T>> T ANY(T subQuery) {
+    static <T extends Comparable<? super T>> T ANY(Collection<T> subQuery) {
         throw new UnsupportedOperationException();
     }
 
@@ -128,7 +128,7 @@ public interface Operators {
     }
 
     @Function(omitParentheses = true)
-    static <T extends Comparable<? super T>> T SOME(T subQuery) {
+    static <T extends Comparable<? super T>> T SOME(Collection<T> subQuery) {
         throw new UnsupportedOperationException();
     }
 
