@@ -27,6 +27,13 @@ public interface View<T> {
                    Comparable<?>... overrides);
 
     /**
+     * Same as {@link #from(Object, Comparable...)}, for multiple objects
+     */
+    default Record<T>[] from(Iterable<T> source) {
+        return Directives.from(source).apply(this);
+    }
+
+    /**
      * Same as {@link #from(Object, Comparable...)}, with all columns aliased.
      */
     @Function(name = "", omitParentheses = true)

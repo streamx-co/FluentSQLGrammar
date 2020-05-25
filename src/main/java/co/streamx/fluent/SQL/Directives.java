@@ -265,4 +265,19 @@ public interface Directives {
                                            Class<D> derived) {
         throw new UnsupportedOperationException();
     }
+
+    /**
+     * Internal helper method for {@link View#from(Iterable)}
+     */
+    @Local
+    static <T> Function1<View<T>, Record<T>[]> from(Iterable<T> batch) {
+        Function1<View<T>, Record<T>[]> result = Function1.emptyArray();
+
+        for (T item : batch) {
+            Function1<View<T>, Record<T>[]> current = result;
+            result = view -> varargs(view.from(parameter(item)), current.apply(view));
+        }
+
+        return result;
+    }
 }
